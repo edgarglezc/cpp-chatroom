@@ -1,0 +1,25 @@
+.
+├── app
+│   ├── client
+│   │   └── client.cpp
+│   ├── main.cpp
+│   └── server
+│       └── server.cpp
+├── CMakeLists.txt
+├── include
+│   ├── message
+│   │   ├── ImageMessage.hpp
+│   │   ├── Message.hpp
+│   │   └── TextMessage.hpp
+│   └── User.hpp
+├── LICENSE
+├── project_structure.txt
+├── README.md
+├── src
+│   ├── message
+│   │   ├── Message.cpp
+│   │   └── TextMessage.cpp
+│   └── User.cpp
+└── update_tree.sh
+
+7 directories, 15 files

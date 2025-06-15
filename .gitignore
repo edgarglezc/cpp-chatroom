@@ -1,0 +1,18 @@
+# Visual Studio Code settings
+.vscode
+
+# Build files
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.o
+*.obj
+*.exe
+*.out
+
+# Backup and temp files
+*~
+*.swp
+*.tmp
