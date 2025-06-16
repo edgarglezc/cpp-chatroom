@@ -13,6 +13,7 @@ set(SOURCES
     src/message/ImageMessage.cpp
     src/message/VideoMessage.cpp
     src/MessageManager.cpp
+    src/ChatRoom.cpp
 ) # path to source files
 
 add_executable(client app/client/client.cpp) # Create client executable

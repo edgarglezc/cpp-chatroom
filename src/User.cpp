@@ -15,3 +15,8 @@ std::string User::getPassword() const
 {
     return password_;
 }
+
+bool User::authenticate(const std::string& password)
+{
+    return password_ == password;
+}

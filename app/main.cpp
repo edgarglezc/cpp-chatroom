@@ -1,29 +1,46 @@
 #include <iostream>
-
-#include "MessageManager.hpp"
+#include <memory>
+#include "ChatRoom.hpp"
 #include "TextMessage.hpp"
-#include "ImageMessage.hpp"
-#include "VideoMessage.hpp"
 
 int main()
 {
-    Chat::MessageManager manager;
+    Chat::ChatRoom chat;
 
-    // Crear algunos mensajes
-    auto msg1 = std::make_shared<Chat::TextMessage>("alice", "Hello world!");
-    auto msg2 = std::make_shared<Chat::ImageMessage>("bob", "/images/photo1.jpg", "jpg", 800, 600);
-    auto msg3 = std::make_shared<Chat::VideoMessage>("alice", "/videos/video1.mp4", 120);
+    // Registrar usuarios
+    if (chat.registerUser("alice", "password123"))
+        std::cout << "User alice registered.\n";
+    else
+        std::cout << "User alice registration failed.\n";
 
-    // Agregarlos al manager
-    manager.addMessage(msg1);
-    manager.addMessage(msg2);
-    manager.addMessage(msg3);
+    if (chat.registerUser("bob", "mypassword"))
+        std::cout << "User bob registered.\n";
 
-    std::cout << "\n📜 All Messages:\n";
-    manager.printAllMessages();
+    // Intentar registrar un usuario existente
+    if (!chat.registerUser("alice", "newpass"))
+        std::cout << "User alice already exists.\n";
 
-    std::cout << "\n🔎 Messages by user 'alice':\n";
-    manager.printMessagesBySender("alice");
+    // Autenticar usuario
+    auto userOpt = chat.authenticateUser("alice", "password123");
+    if (userOpt)
+        std::cout << "User alice authenticated successfully.\n";
+    else
+        std::cout << "User alice authentication failed.\n";
+
+    // Crear y enviar mensajes
+    auto msg1 = std::make_shared<Chat::TextMessage>("alice", "Hello, this is Alice!");
+    auto msg2 = std::make_shared<Chat::TextMessage>("bob", "Hi Alice, this is Bob.");
+
+    chat.sendMessage(msg1);
+    chat.sendMessage(msg2);
+
+    // Mostrar todo el historial de mensajes
+    std::cout << "\n=== Chat History ===\n";
+    chat.showChatHistory();
+
+    // Mostrar mensajes de un usuario específico
+    std::cout << "\n=== Messages from alice ===\n";
+    chat.showUserMessages("alice");
 
     return 0;
 }
