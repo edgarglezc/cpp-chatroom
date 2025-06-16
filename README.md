@@ -38,10 +38,6 @@ Build a console-based application where multiple users can register, authenticat
 
 This project is currently under development as an educational exercise. Upcoming features include full socket communication, a more advanced CLI interface, and persistent user/message storage.
 
-## 🤝 Contributions
-
-Contributions are welcome! If you'd like to help, feel free to fork the repository, open an issue, or submit a pull request.
-
 ---
 
 > Developed by **Edgar Camino** as a personal learning project for mastering modern C++.

@@ -1,4 +1,3 @@
-// include/User.hpp
 #pragma once
 
 #include <string>

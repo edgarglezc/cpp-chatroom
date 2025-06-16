@@ -30,6 +30,7 @@ namespace Chat
         int getWidth() const;
         int getHeight() const;
 
+        std::string getContent() const override;
         std::string getType() const override;
     };
 } // namespace Chat

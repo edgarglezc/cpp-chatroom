@@ -13,5 +13,7 @@ namespace Chat
         TextMessage(const std::string&, const std::string&);
 
         std::string getContent() const override;
+
+        std::string getType() const override;
     };
 } // namespace Chat

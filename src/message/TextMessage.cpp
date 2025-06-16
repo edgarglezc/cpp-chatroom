@@ -7,4 +7,14 @@ namespace Chat
     {
 
     }
+
+    std::string TextMessage::getContent() const
+    {
+        return text_;
+    }
+
+    std::string TextMessage::getType() const
+    {
+        return "TextMessage";
+    }
 } // namespace Chat

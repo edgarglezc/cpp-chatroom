@@ -9,6 +9,10 @@ include_directories(include include/message) # path to .hpp dirs
 set(SOURCES
     src/User.cpp
     src/message/Message.cpp
+    src/message/TextMessage.cpp
+    src/message/ImageMessage.cpp
+    src/message/VideoMessage.cpp
+    src/MessageManager.cpp
 ) # path to source files
 
 add_executable(client app/client/client.cpp) # Create client executable
